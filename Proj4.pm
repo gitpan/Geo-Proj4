@@ -5,7 +5,7 @@ use DynaLoader;
 use strict;
 
 our @ISA     = 'DynaLoader';
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 
 # Preloaded methods go here.

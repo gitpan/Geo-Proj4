@@ -5,5 +5,15 @@ ppport.h
 Proj4.xs
 README
 t/Geo-Proj4.t
+eg/sample.pl
 Proj4.pm
 typemap
+META.yml                                Module meta-data (added by MakeMaker)
+inc/Module/Install.pm
+inc/Module/Install/Metadata.pm
+inc/Module/Install/Base.pm
+inc/Module/Install/Makefile.pm
+inc/Module/Install/WriteAll.pm
+inc/Module/Install/Win32.pm
+inc/Module/Install/Can.pm
+inc/Module/Install/Fetch.pm
