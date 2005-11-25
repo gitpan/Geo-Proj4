@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 
 use strict;
+use warnings;
+
 use Geo::Proj4;
 
 my $proj = Geo::Proj4->new( proj => "utm", zone => 10 );

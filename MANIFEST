@@ -1,19 +1,15 @@
 Changes
-Makefile.PL
+INSTALL
 MANIFEST
-ppport.h
+META.yml                                 Module meta-data (added by MakeMaker)
+Makefile.PL
 Proj4.xs
-README
-t/Geo-Proj4.t
 eg/sample.pl
-Proj4.pm
+lib/Geo/Proj4.pm
+lib/Geo/Proj4.pod
+ppport.h
+t/10utm.t
+t/20clark80.t
+test_list
 typemap
-META.yml                                Module meta-data (added by MakeMaker)
-inc/Module/Install.pm
-inc/Module/Install/Metadata.pm
-inc/Module/Install/Base.pm
-inc/Module/Install/Makefile.pm
-inc/Module/Install/WriteAll.pm
-inc/Module/Install/Win32.pm
-inc/Module/Install/Can.pm
-inc/Module/Install/Fetch.pm
+version
