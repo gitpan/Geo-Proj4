@@ -1,9 +1,10 @@
 package Geo::Proj4;
 use vars '$VERSION';
-$VERSION = '0.95';
+$VERSION = '0.96';
 
 use strict;
 use warnings;
+#our $VERSION = '0.95';
 
 use base 'DynaLoader';
 
@@ -11,7 +12,7 @@ use Scalar::Util   qw/dualvar/;
 use Carp           qw/croak/;
 
 # The library definitions
-bootstrap Geo::Proj4 $VERSION;
+bootstrap Geo::Proj4; # $VERSION;
 
 
 my $last_error;
@@ -48,6 +49,18 @@ sub normalized()
 {   my $norm = normalized_proj4(shift);
     $norm =~ s/^\s+//;
     $norm;
+}
+
+
+sub datum()
+{   my $norm = shift->normalized;
+    $norm =~ m/\+datum\=(w+)/ ? $1 : undef;
+}
+
+
+sub projection()
+{   my $norm = shift->normalized;
+    $norm =~ m/\+proj\=(w+)/ ? $1 : undef;
 }
 
 
@@ -137,7 +150,7 @@ sub libVersion()
 sub listTypes() { &def_types_proj4 }
 
 
-sub type($)
+sub typeInfo($)
 {   my $label = $_[1];
     my %def = (id => $label);
     my($descr) = type_proj4($label);
@@ -150,7 +163,7 @@ sub type($)
 sub listEllipsoids() { &def_ellps_proj4 }
 
 
-sub ellipsoid($)
+sub ellipsoidInfo($)
 {   my $label = $_[1];
     my %def = (id => $label);
     @def{ qw/major ell name/ } = ellps_proj4($label);
@@ -161,7 +174,7 @@ sub ellipsoid($)
 sub listUnits() { &def_units_proj4 }
 
 
-sub unit($)
+sub unitInfo($)
 {   my $label = $_[1];
     my %def = (id => $label);
     @def{ qw/to_meter name/ } = unit_proj4($label);
@@ -173,7 +186,7 @@ sub unit($)
 sub listDatums() { &def_datums_proj4 }
 
 
-sub datum($)
+sub datumInfo($)
 {   my $label = $_[1];
     my %def = (id => $label);
     @def{ qw/ellipse_id definition comments/ } = datum_proj4($label);

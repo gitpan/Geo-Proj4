@@ -81,6 +81,14 @@ I<Example:>
 =head2 Accessors
 
 
+$obj-E<gt>B<datum>
+
+=over 4
+
+Tries to return a datum name for this projection.
+
+=back
+
 $obj-E<gt>B<dump>
 
 =over 4
@@ -151,6 +159,14 @@ $obj-E<gt>B<normalized>
 Returns a string which is produced by the library based on the data
 extracted from the initiation parameters.  This string may be more
 explicit than the passed values, and could be used for debugging.
+
+=back
+
+$obj-E<gt>B<projection>
+
+=over 4
+
+Returns the projection type.
 
 =back
 
@@ -265,7 +281,7 @@ See L<transform()|Geo::Proj4/"Converters">
 =head2 Library introspection
 
 
-Geo::Proj4-E<gt>B<datum>(LABEL)
+Geo::Proj4-E<gt>B<datumInfo>(LABEL)
 
 =over 4
 
@@ -274,7 +290,7 @@ L<listDatums()|Geo::Proj4/"Library introspection">, all defined LABELS can be fo
 
 =back
 
-Geo::Proj4-E<gt>B<ellipsoid>(LABEL)
+Geo::Proj4-E<gt>B<ellipsoidInfo>(LABEL)
 
 =over 4
 
@@ -353,7 +369,7 @@ I<Example:>
 
 =back
 
-Geo::Proj4-E<gt>B<type>(LABEL)
+Geo::Proj4-E<gt>B<typeInfo>(LABEL)
 
 =over 4
 
@@ -362,7 +378,7 @@ L<listTypes()|Geo::Proj4/"Library introspection">, all defined LABELS can be fou
 
 =back
 
-Geo::Proj4-E<gt>B<unit>(LABEL)
+Geo::Proj4-E<gt>B<unitInfo>(LABEL)
 
 =over 4
 
@@ -427,7 +443,7 @@ proj(1), cs2cs(1), pj_init(3).
 
 =head1 COPYRIGHTS
 
-Module version 0.95.
+Module version 0.96.
 Developed and maintained by Mark Overmeer E<lt>proj4@overmeer.netE<gt>.
 
 Originally Written by Schuyler Erle E<lt>schuyler@nocat.netE<gt> and
