@@ -1,6 +1,8 @@
 Changes
 INSTALL
+Intern.xs
 MANIFEST
+META.yml                                 Module meta-data (added by MakeMaker)
 Makefile.PL
 Proj4.xs
 eg/sample.pl
@@ -12,4 +14,3 @@ t/20clark80.t
 test_list
 typemap
 version
-META.yml                                 Module meta-data (added by MakeMaker)

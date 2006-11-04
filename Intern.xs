@@ -7,7 +7,7 @@
 #include <proj_api.h>
 #include <math.h>
 
-MODULE = Geo::Proj4	PACKAGE = Geo::Proj4
+MODULE = Geo::Proj4::Intern	PACKAGE = Geo::Proj4::Intern
 
 #define NO_ERROR "no error"
 
@@ -34,7 +34,7 @@ new_proj4(defn)
 	}
 	else
 	{   SV *object = newSV(0);
-	    sv_setref_pv(object, "Geo::Proj4", (void *)rawstruct);
+	    sv_setref_pv(object, "Geo::Proj4::Intern", (void *)rawstruct);
 
             XPUSHs(sv_2mortal(object));
 	}
@@ -374,7 +374,4 @@ DESTROY(proj)
 	projPJ proj
     PROTOTYPE: $
     CODE:
-	/* cloned objects also call DESTROY, which is a very   */
-	/* bad idea.  Therefore, the memory will not  be freed */
-	/* until a major rewrite avoids this problem.          */
-	/* pj_free(proj); */
+	pj_free(proj);

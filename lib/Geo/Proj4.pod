@@ -390,6 +390,7 @@ L<listUnits()|Geo::Proj4/"Library introspection">, all defined LABELS can be fou
 
 
 
+
 =head1 DETAILS
 
 
@@ -443,7 +444,7 @@ proj(1), cs2cs(1), pj_init(3).
 
 =head1 COPYRIGHTS
 
-Module version 0.96.
+Module version 0.97.
 Developed and maintained by Mark Overmeer E<lt>proj4@overmeer.netE<gt>.
 
 Originally Written by Schuyler Erle E<lt>schuyler@nocat.netE<gt> and
