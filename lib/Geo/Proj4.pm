@@ -1,6 +1,10 @@
+# Copyrights 2007 by Mark Overmeer.
+# For other contributors see Changes.
+# See the manual pages for details on the licensing terms.
+# Pod stripped from pm file by OODoc 0.99.
 package Geo::Proj4;
 use vars '$VERSION';
-$VERSION = '0.97';
+$VERSION = '0.98';
 
 use strict;
 use warnings;
@@ -98,8 +102,8 @@ sub inverseRad($$) { inverse_proj4(@_) }
 sub transform($$)
 {   my ($self, $to, $points) = @_;
 
-    croak "ERROR: expects point array"
-        unless ref $points;
+    ref $points eq 'ARRAY'
+       or croak "ERROR: transform() expects array of points";
 
     my ($err, $errtxt, $pr);
     if(ref($points->[0]) eq 'ARRAY')
@@ -118,8 +122,8 @@ sub transform($$)
 sub transformRad($$)
 {   my ($self, $to, $points) = @_;
 
-    croak "ERROR: expects point array"
-        unless ref $points;
+    ref $points eq 'ARRAY'
+        or croak "ERROR: transformRad() expects array of points";
 
     my ($err, $errtxt, $pr);
     if(ref($points->[0]) eq 'ARRAY')
@@ -193,5 +197,7 @@ sub datumInfo($)
     \%def;
 }
 
+
+# more text in PODTAIL.txt
 
 1;
