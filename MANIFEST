@@ -1,18 +1,16 @@
 Changes
 INSTALL
 MANIFEST
-META.yml                                 Module meta-data (added by MakeMaker)
 Makefile.PL
 Proj4.xs
-eg/sample.pl
-eg/test_list.pl
-eg/use_epsg.pl
+README
 examples/sample.pl
 examples/test_list.pl
 examples/use_epsg.pl
 lib/Geo/Proj4.pm
 lib/Geo/Proj4.pod
-ppport.h
 t/10utm.t
 t/20clark80.t
+t/pod.t
 typemap
+META.yml                                 Module meta-data (added by MakeMaker)
