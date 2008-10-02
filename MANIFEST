@@ -1,6 +1,7 @@
 Changes
 INSTALL
 MANIFEST
+META.yml
 Makefile.PL
 Proj4.xs
 README
@@ -13,4 +14,3 @@ t/10utm.t
 t/20clark80.t
 t/pod.t
 typemap
-META.yml                                 Module meta-data (added by MakeMaker)

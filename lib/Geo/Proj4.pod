@@ -64,7 +64,7 @@ contains all parameters at once.  You must supply a C<proj> parameter.
 In case of an OPTION list: WARNING: Specify boolean parameters (e.g. the
 south parameter to the UTM projection) with a matching value of undef.
 
-I<Example:> 
+example: 
 
  my $proj = Geo::Proj4->new(proj => "merc",
     ellps => "clrk66", lon_0 => -96 )
@@ -101,7 +101,7 @@ Geo::Proj4-E<gt>B<error>
 Returns a dualvar (see Scalar::Util) containing the
 error number and error string of the last reported error.
 
-I<Example:> 
+example: 
 
  my $proj = Geo::Proj4->new(...);
  unless(defined $proj)
@@ -186,7 +186,7 @@ than the order of parameters will be returned as LONG,LAT (not lat,long!)
 
 On error, C<forward> will return undef for both values.
 
-I<Example:> 
+example: 
 
  my ($x, $y) = $proj->forward($lat, $lon);
  my ($long2, $lat2) = $proj->forward($lat, $lon);
@@ -217,7 +217,7 @@ L<inverseRad()|Geo::Proj4/"Converters">.
 
 On error, C<inverse> will return undef for both values.
 
-I<Example:> 
+example: 
 
   if($proj->hasInverse)
   {  my ($lat, $lon) = $proj->inverse($x, $y);
@@ -247,7 +247,7 @@ destination projections, coordinates are translated into radians and/or
 back.  Both input and output values are always in X-Y/LongLat order.
 See L<transformRad()|Geo::Proj4/"Converters">
 
-I<Example:> 
+example: 
 
  my $from  = Geo::Proj4->new("+proj=latlong +datum=NAD83");
  my $to    = Geo::Proj4->new("+proj=utm +zone=10 +datum=WGS84");
@@ -309,7 +309,7 @@ Geo::Proj4-E<gt>B<listDatums>
 
 Returns a list with all defined datum labels.
 
-I<Example:> 
+example: 
 
  foreach my $id (Geo::Proj4->listDatums)
  {   my $def = Geo::Proj4->datum($id);
@@ -324,7 +324,7 @@ Geo::Proj4-E<gt>B<listEllipsoids>
 
 Returns a list with all defined ellips labels.
 
-I<Example:> 
+example: 
 
  foreach my $id (Geo::Proj4->listEllipsoids)
  {   my $def = Geo::Proj4->ellipsoid($id);
@@ -339,7 +339,7 @@ Geo::Proj4-E<gt>B<listTypes>
 
 Returns a list with all defined projection types.
 
-I<Example:> 
+example: 
 
  foreach my $id (Geo::Proj4->listTypes)
  {   my $def = Geo::Proj4->type($id);
@@ -354,7 +354,7 @@ Geo::Proj4-E<gt>B<listUnits>
 
 Returns a list with all defined unit labels.
 
-I<Example:> 
+example: 
 
  foreach my $id (Geo::Proj4->listUnits)
  {   my $def = Geo::Proj4->unit($id);
@@ -418,14 +418,26 @@ calculating projections, this is more important than on maps.
 
 =head1 DIAGNOSTICS
 
-I<Error:> transform() expects array of points
+Error: transform() expects array of points
 
-I<Error:> transformRad() expects array of points
+=over 4
+
+=back
+
+Error: transformRad() expects array of points
+
+=over 4
+
+=back
 
 =head1 REFERENCES
 
 See the Geo::Point website at L<http://perl.overmeer.net/geo/> for
-an html version of this and related modules.
+an html version of this and related modules;
+L</Geo::GML>,
+L</Geo::Point>,
+L</Geo::WKT> and
+L</Math::Polygon>
 
 Effusive thanks to Frank Warmerdam (maintainer of PROJ.4) and Gerald
 Evenden (main contributor of PROJ.4). Their PROJ.4 library home page:
@@ -435,11 +447,11 @@ proj(1), cs2cs(1), pj_init(3).
 
 =head1 COPYRIGHTS
 
-Developed and maintained by Mark Overmeer E<lt>geo\@overmeer.netE<gt>.
+Developed and maintained by Mark Overmeer E<lt>geo@overmeer.netE<gt>.
 Copyright (c) 2004-2007 by the authors. All rights reserved.
 
-Originally Written by Schuyler Erle E<lt>schuyler\@nocat.netE<gt> and
-Rich Gibson E<lt>rich\@nocat.netE<gt>.  Their site: Mapping Hacks home
+Originally Written by Schuyler Erle E<lt>schuyler@nocat.netE<gt> and
+Rich Gibson E<lt>rich@nocat.netE<gt>.  Their site: Mapping Hacks home
 page: L<http://www.mappinghacks.com>
 
 =head1 LICENSE

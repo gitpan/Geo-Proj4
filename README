@@ -1,5 +1,5 @@
-=== README for Geo-Proj4 version 0.99
-=   Generated on Fri Jun  8 17:09:00 2007 by OODoc 1.00
+=== README for Geo-Proj4 version 1.00
+=   Generated on Thu Oct  2 23:31:08 2008 by OODoc 1.05
 
 There are various ways to install this module:
 
@@ -9,16 +9,16 @@ There are various ways to install this module:
  (2) if you use Windows, have a look at http://ppm.activestate.com/
 
  (3) if you have downloaded this module manually (as root/administrator)
-       gzip -d Geo-Proj4-0.99.tar.gz
-       tar -xf Geo-Proj4-0.99.tar
-       cd Geo-Proj4-0.99
+       gzip -d Geo-Proj4-1.00.tar.gz
+       tar -xf Geo-Proj4-1.00.tar
+       cd Geo-Proj4-1.00
        perl Makefile.PL
        make          # optional
        make test     # optional
        make install
 
 For usage, see the included manual-pages or
-    http://search.cpan.org/dist/Geo-Proj4-0.99/
+    http://search.cpan.org/dist/Geo-Proj4-1.00/
 
 Please report problems to
     http://rt.cpan.org/Dist/Display.html?Queue=Geo-Proj4
