@@ -12,5 +12,5 @@ lib/Geo/Proj4.pm
 lib/Geo/Proj4.pod
 t/10utm.t
 t/20clark80.t
-t/pod.t
+t/99pod.t
 typemap

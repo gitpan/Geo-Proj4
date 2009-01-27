@@ -1,10 +1,10 @@
-# Copyrights 2008 by Mark Overmeer.
+# Copyrights 2009 by Mark Overmeer.
 #  For other contributors see Changes.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 1.05.
+# Pod stripped from pm file by OODoc 1.06.
 package Geo::Proj4;
 use vars '$VERSION';
-$VERSION = '1.00';
+$VERSION = '1.01';
 
 
 use strict;
