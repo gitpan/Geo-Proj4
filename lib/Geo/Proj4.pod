@@ -50,9 +50,9 @@ on both source and destination projection and use L<transform()|Geo::Proj4/"Conv
 
 =head2 Instantiation
 
-Geo::Proj4-E<gt>B<new>(STRING|OPTIONS)
-
 =over 4
+
+=item Geo::Proj4-E<gt>B<new>(STRING|OPTIONS)
 
 The object defines the target projection, but that's easier said than
 done: projections have different parameter needs.  The parameters which
@@ -81,26 +81,18 @@ example:
 
 =head2 Accessors
 
-$obj-E<gt>B<datum>
-
 =over 4
+
+=item $obj-E<gt>B<datum>
 
 Tries to return a datum name for this projection.
 
-=back
-
-$obj-E<gt>B<dump>
-
-=over 4
+=item $obj-E<gt>B<dump>
 
 Write the definition in extended form to stdout.  This output cannot be
 caught, because it is done on stdio level, below the reach of PerlIO.
 
-=back
-
-Geo::Proj4-E<gt>B<error>
-
-=over 4
+=item Geo::Proj4-E<gt>B<error>
 
 Returns a dualvar (see Scalar::Util) containing the
 error number and error string of the last reported error.
@@ -114,57 +106,33 @@ example:
      warn "error-string: $error\n";
  }
 
-=back
-
-$obj-E<gt>B<hasInverse>
-
-=over 4
+=item $obj-E<gt>B<hasInverse>
 
 Returns whether the reverse function for the projection exists.  Some
 projections are one-way.
 
-=back
-
-$obj-E<gt>B<isGeocentric>
-
-=over 4
+=item $obj-E<gt>B<isGeocentric>
 
 Returns true when the source projection is using a geocentric coordinate
 system; i.e. uses x-y coordinates.
 
-=back
-
-$obj-E<gt>B<isGeodesic>
-
-=over 4
+=item $obj-E<gt>B<isGeodesic>
 
 Returns true when the source projection is using a geodetic coordinate
 system; i.e. uses lat long coordinates.  Same as L<isLatlong()|Geo::Proj4/"Accessors">
 
-=back
-
-$obj-E<gt>B<isLatlong>
-
-=over 4
+=item $obj-E<gt>B<isLatlong>
 
 Returns true when the source projection is using a geodetic coordinate
 system; i.e. uses lat long coordinates.  Same as L<isGeodesic()|Geo::Proj4/"Accessors">.
 
-=back
-
-$obj-E<gt>B<normalized>
-
-=over 4
+=item $obj-E<gt>B<normalized>
 
 Returns a string which is produced by the library based on the data
 extracted from the initiation parameters.  This string may be more
 explicit than the passed values, and could be used for debugging.
 
-=back
-
-$obj-E<gt>B<projection>
-
-=over 4
+=item $obj-E<gt>B<projection>
 
 Returns the projection type.
 
@@ -172,9 +140,9 @@ Returns the projection type.
 
 =head2 Converters
 
-$obj-E<gt>B<forward>(LATITUDE, LONGITUDE)
-
 =over 4
+
+=item $obj-E<gt>B<forward>(LATITUDE, LONGITUDE)
 
 Perform a forward projection from LATITUDE and LONGITUDE (LL) to the
 cartographic projection (XY) represented by the Geo::Proj4 instance.
@@ -195,22 +163,14 @@ example:
  my ($x, $y) = $proj->forward($lat, $lon);
  my ($long2, $lat2) = $proj->forward($lat, $lon);
 
-=back
-
-$obj-E<gt>B<forwardRad>(LATITUDE, LONGITUDE)
-
-=over 4
+=item $obj-E<gt>B<forwardRad>(LATITUDE, LONGITUDE)
 
 Perform a forward projection from LATITUDE and LONGITUDE (LL) to the
 cartographic projection (XY) represented by the Geo::Proj4 instance.
 This function reflects to library function C<forward()>, expecting
 radians, not degrees.
 
-=back
-
-$obj-E<gt>B<inverse>((X,Y) | (LAT|LONG))
-
-=over 4
+=item $obj-E<gt>B<inverse>((X,Y) | (LAT|LONG))
 
 Perform an inverse projection from the (cartographic) projection represented
 by this Geo::Proj4 object, back into latitude and longitude values.
@@ -228,22 +188,14 @@ example:
      ...
   }
 
-=back
-
-$obj-E<gt>B<inverseRad>((X,Y) | (LAT|LONG))
-
-=over 4
+=item $obj-E<gt>B<inverseRad>((X,Y) | (LAT|LONG))
 
 Perform an inverse projection from the (cartographic) projection
 represented by this Geo::Proj4 object, back into latitude and longitude
 values.  Latitude and longitude are assumed to be in radians. See
 L<inverse()|Geo::Proj4/"Converters">.
 
-=back
-
-$obj-E<gt>B<transform>(TO, POINT|ARRAY-OF-POINTS)
-
-=over 4
+=item $obj-E<gt>B<transform>(TO, POINT|ARRAY-OF-POINTS)
 
 Translate the POINTS into the projecten of TO.  Each point is specified
 as two or three values in an ARRAY.  In case of latlong source or
@@ -263,11 +215,7 @@ example:
  my $pr_point1 = $pr->[0];
  my $pr_point2 = $pr->[1];
 
-=back
-
-$obj-E<gt>B<transformRad>(TO, POINT|ARRAY-OF-POINTS)
-
-=over 4
+=item $obj-E<gt>B<transformRad>(TO, POINT|ARRAY-OF-POINTS)
 
 Translate the POINTS into the projecten of TO.  Each point is specified
 as two or three values in an ARRAY.  In case of latlong source or
@@ -279,37 +227,25 @@ See L<transform()|Geo::Proj4/"Converters">
 
 =head2 Library introspection
 
-Geo::Proj4-E<gt>B<datumInfo>(LABEL)
-
 =over 4
+
+=item Geo::Proj4-E<gt>B<datumInfo>(LABEL)
 
 Returns a hash with information about the specified datum.  With
 L<listDatums()|Geo::Proj4/"Library introspection">, all defined LABELS can be found.
 
-=back
-
-Geo::Proj4-E<gt>B<ellipsoidInfo>(LABEL)
-
-=over 4
+=item Geo::Proj4-E<gt>B<ellipsoidInfo>(LABEL)
 
 Returns a hash with information about the specified ellipsis.  With
 L<listEllipsoids()|Geo::Proj4/"Library introspection">, all defined LABELS can be found.
 
-=back
+=item $obj-E<gt>B<libVersion>
 
-$obj-E<gt>B<libVersion>
-
-Geo::Proj4-E<gt>B<libVersion>
-
-=over 4
+=item Geo::Proj4-E<gt>B<libVersion>
 
 Returns the version of the proj4 library
 
-=back
-
-Geo::Proj4-E<gt>B<listDatums>
-
-=over 4
+=item Geo::Proj4-E<gt>B<listDatums>
 
 Returns a list with all defined datum labels.
 
@@ -320,11 +256,7 @@ example:
      print "$id = $def->{ellips_id}\n";
  }
 
-=back
-
-Geo::Proj4-E<gt>B<listEllipsoids>
-
-=over 4
+=item Geo::Proj4-E<gt>B<listEllipsoids>
 
 Returns a list with all defined ellips labels.
 
@@ -335,11 +267,7 @@ example:
      print "$id = $def->{name}\n";
  }
 
-=back
-
-Geo::Proj4-E<gt>B<listTypes>
-
-=over 4
+=item Geo::Proj4-E<gt>B<listTypes>
 
 Returns a list with all defined projection types.
 
@@ -350,11 +278,7 @@ example:
      print "$id = $def->{description}\n";
  }
 
-=back
-
-Geo::Proj4-E<gt>B<listUnits>
-
-=over 4
+=item Geo::Proj4-E<gt>B<listUnits>
 
 Returns a list with all defined unit labels.
 
@@ -365,20 +289,12 @@ example:
      print "$id = $def->{name}\n";
  }
 
-=back
-
-Geo::Proj4-E<gt>B<typeInfo>(LABEL)
-
-=over 4
+=item Geo::Proj4-E<gt>B<typeInfo>(LABEL)
 
 Returns a hash with information about the specified projection type.  With
 L<listTypes()|Geo::Proj4/"Library introspection">, all defined LABELS can be found.
 
-=back
-
-Geo::Proj4-E<gt>B<unitInfo>(LABEL)
-
-=over 4
+=item Geo::Proj4-E<gt>B<unitInfo>(LABEL)
 
 Returns a hash with information about the specified unit.  With
 L<listUnits()|Geo::Proj4/"Library introspection">, all defined LABELS can be found.
@@ -422,15 +338,11 @@ calculating projections, this is more important than on maps.
 
 =head1 DIAGNOSTICS
 
-Error: transform() expects array of points
-
 =over 4
 
-=back
+=item Error: transform() expects array of points
 
-Error: transformRad() expects array of points
-
-=over 4
+=item Error: transformRad() expects array of points
 
 =back
 
