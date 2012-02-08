@@ -1,10 +1,10 @@
-# Copyrights 2011 by Mark Overmeer.
+# Copyrights 2012 by Mark Overmeer.
 #  For other contributors see Changes.
 # See the manual pages for details on the licensing terms.
 # Pod stripped from pm file by OODoc 2.00.
 package Geo::Proj4;
 use vars '$VERSION';
-$VERSION = '1.02';
+$VERSION = '1.03';
 
 
 use strict;
@@ -65,7 +65,7 @@ sub datum()
 
 sub projection()
 {   my $norm = shift->normalized;
-    $norm =~ m/\+proj\=(w+)/ ? $1 : undef;
+    $norm =~ m/\+proj\=(\w+)/ ? $1 : undef;
 }
 
 

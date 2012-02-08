@@ -83,16 +83,16 @@ example:
 
 =over 4
 
-=item $obj-E<gt>B<datum>
+=item $obj-E<gt>B<datum>()
 
 Tries to return a datum name for this projection.
 
-=item $obj-E<gt>B<dump>
+=item $obj-E<gt>B<dump>()
 
 Write the definition in extended form to stdout.  This output cannot be
 caught, because it is done on stdio level, below the reach of PerlIO.
 
-=item Geo::Proj4-E<gt>B<error>
+=item Geo::Proj4-E<gt>B<error>()
 
 Returns a dualvar (see Scalar::Util) containing the
 error number and error string of the last reported error.
@@ -106,33 +106,33 @@ example:
      warn "error-string: $error\n";
  }
 
-=item $obj-E<gt>B<hasInverse>
+=item $obj-E<gt>B<hasInverse>()
 
 Returns whether the reverse function for the projection exists.  Some
 projections are one-way.
 
-=item $obj-E<gt>B<isGeocentric>
+=item $obj-E<gt>B<isGeocentric>()
 
 Returns true when the source projection is using a geocentric coordinate
 system; i.e. uses x-y coordinates.
 
-=item $obj-E<gt>B<isGeodesic>
+=item $obj-E<gt>B<isGeodesic>()
 
 Returns true when the source projection is using a geodetic coordinate
 system; i.e. uses lat long coordinates.  Same as L<isLatlong()|Geo::Proj4/"Accessors">
 
-=item $obj-E<gt>B<isLatlong>
+=item $obj-E<gt>B<isLatlong>()
 
 Returns true when the source projection is using a geodetic coordinate
 system; i.e. uses lat long coordinates.  Same as L<isGeodesic()|Geo::Proj4/"Accessors">.
 
-=item $obj-E<gt>B<normalized>
+=item $obj-E<gt>B<normalized>()
 
 Returns a string which is produced by the library based on the data
 extracted from the initiation parameters.  This string may be more
 explicit than the passed values, and could be used for debugging.
 
-=item $obj-E<gt>B<projection>
+=item $obj-E<gt>B<projection>()
 
 Returns the projection type.
 
@@ -239,13 +239,13 @@ L<listDatums()|Geo::Proj4/"Library introspection">, all defined LABELS can be fo
 Returns a hash with information about the specified ellipsis.  With
 L<listEllipsoids()|Geo::Proj4/"Library introspection">, all defined LABELS can be found.
 
-=item $obj-E<gt>B<libVersion>
+=item $obj-E<gt>B<libVersion>()
 
-=item Geo::Proj4-E<gt>B<libVersion>
+=item Geo::Proj4-E<gt>B<libVersion>()
 
 Returns the version of the proj4 library
 
-=item Geo::Proj4-E<gt>B<listDatums>
+=item Geo::Proj4-E<gt>B<listDatums>()
 
 Returns a list with all defined datum labels.
 
@@ -256,7 +256,7 @@ example:
      print "$id = $def->{ellips_id}\n";
  }
 
-=item Geo::Proj4-E<gt>B<listEllipsoids>
+=item Geo::Proj4-E<gt>B<listEllipsoids>()
 
 Returns a list with all defined ellips labels.
 
@@ -267,7 +267,7 @@ example:
      print "$id = $def->{name}\n";
  }
 
-=item Geo::Proj4-E<gt>B<listTypes>
+=item Geo::Proj4-E<gt>B<listTypes>()
 
 Returns a list with all defined projection types.
 
@@ -278,7 +278,7 @@ example:
      print "$id = $def->{description}\n";
  }
 
-=item Geo::Proj4-E<gt>B<listUnits>
+=item Geo::Proj4-E<gt>B<listUnits>()
 
 Returns a list with all defined unit labels.
 
