@@ -1,21 +1,21 @@
---- #YAML:1.0
-name:               Geo-Proj4
-version:            1.03
-abstract:           Proj4 library for carthographic projections
+---
+abstract: 'Proj4 library for carthographic projections'
 author:
-    - Mark Overmeer
-license:            perl
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Mark Overmeer'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:  {}
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.120921'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Geo-Proj4
+no_index:
+  directory:
+    - t
+    - inc
+requires: {}
+version: 1.04
