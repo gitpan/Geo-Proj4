@@ -1,10 +1,10 @@
-# Copyrights 2012 by [Mark Overmeer].
+# Copyrights 2014 by [Mark Overmeer].
 #  For other contributors see Changes.
 # See the manual pages for details on the licensing terms.
-# Pod stripped from pm file by OODoc 2.00.
+# Pod stripped from pm file by OODoc 2.01.
 package Geo::Proj4;
 use vars '$VERSION';
-$VERSION = '1.04';
+$VERSION = '1.05';
 
 
 use strict;
@@ -46,6 +46,7 @@ sub new($@)
     $self;
 }
 
+#--------------
 
 sub error() { $last_error }
 
@@ -81,6 +82,7 @@ sub isGeocentric() { is_geocentric_proj4(shift) }
 
 sub hasInverse() { has_inverse_proj4(shift) }
 
+#--------------
 
 sub forward($$)
 {   my ($self, $lat, $long) = @_;
@@ -144,6 +146,7 @@ sub AUTOLOAD(@)
     die "$AUTOLOAD not implemented";
 }
 
+#--------------
 
 sub libVersion()
 {   my $version = libproj_version_proj4();
@@ -198,6 +201,7 @@ sub datumInfo($)
     \%def;
 }
 
+#--------------
 
 # more text in PODTAIL.txt
 
